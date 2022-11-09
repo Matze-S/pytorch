@@ -834,6 +834,12 @@ inline Vectorized<T>& operator *= (Vectorized<T>& a, const Vectorized<T>& b) {
 }
 
 template <typename T>
+inline Vectorized<T>& operator <<= (Vectorized<T>& a, const Vectorized<T>& b) {
+  a = a << b;
+  return a;
+}
+
+template <typename T>
 inline Vectorized<T> fmadd(const Vectorized<T>& a, const Vectorized<T>& b, const Vectorized<T>& c) {
   return a * b + c;
 }
